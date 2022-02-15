@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-a!vj*!$(ebji*x#w@xk%$&kk1hmmbov7j*a8f5^)crv3-%4^ag
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,16 +38,53 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'argonaute',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "corsheaders.middleware.CorsPostCsrfMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 'django.middleware.security.SecurityMiddleware',
+    # 'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.messages.middleware.MessageMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOW_HEADERS = ['*']
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://0.0.0.0:3000',
+    'http://www.reboot-calabarfood.com:8000',
+    'http://194.163.155.58:8000',
+    'http://0.0.0.0:8000',
+)
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    'http://localhost:3000',
+    'http://www.reboot-calabarfood.com:8000',
+    'http://194.163.155.58:8000',
+    'http://0.0.0.0:8000',
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    'http://localhost:3000',
+    'http://www.reboot-calabarfood.com:8000',
+    'http://194.163.155.58:8000',
 ]
 
 ROOT_URLCONF = 'argo_sys.urls'
@@ -54,7 +92,9 @@ ROOT_URLCONF = 'argo_sys.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'frontend/build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,8 +156,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = 'reboot_ui/build/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'reboot_ui/build/static/')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'reboot_ui/build/static')
+    # os.path.join(BASE_DIR, 'reboot_frontend/build/static')
+]
