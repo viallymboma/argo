@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;1,100;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;1,100;1,200&display=swap");
+.MainStyle {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  overflow-y: scroll;
+  height: 100vh; }
+  .MainStyle .color {
+    position: absolute;
+    filter: blur(150px);
+    width: 600px;
+    height: 600px; }
+    .MainStyle .color:nth-child(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #096272; }
+    .MainStyle .color:nth-child(2) {
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 500px;
+      height: 500px;
+      background: #87ffef; }
+    .MainStyle .color:nth-child(3) {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 80%);
+      background: #00d2ff; }
+  .MainStyle .OverAllFormContainer {
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 500px; }
+    .MainStyle .OverAllFormContainer .HeaderContainer {
+      display: grid;
+      grid-template-columns: 10fr 1fr;
+      padding: .5rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem; }
+      .MainStyle .OverAllFormContainer .HeaderContainer .right {
+        cursor: pointer; }
+    .MainStyle .OverAllFormContainer .FormBodyContainer {
+      padding: 2rem;
+      display: grid; }
+      .MainStyle .OverAllFormContainer .FormBodyContainer h2 {
+        text-align: center;
+        margin-bottom: 2rem; }
+      .MainStyle .OverAllFormContainer .FormBodyContainer .register_form {
+        display: grid; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .namesContainer {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .namesContainer .span {
+            display: grid; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .positionTHem {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: center; }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .inputBox {
+            display: grid;
+            justify-content: center; }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .maleCheck {
+            height: 50px;
+            width: 50px;
+            -webkit-appearance: none;
+            border-radius: 50%;
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12);
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            outline: none;
+            cursor: pointer;
+            margin: 1rem 0;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            transition: .3s all ease-in-out; }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .maleCheck:hover {
+              background-color: rgba(61, 167, 228, 0.2); }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .maleCheck::after {
+              font-family: FontAwesome;
+              content: '\f183';
+              font-size: 2rem;
+              color: rgba(21, 108, 129, 0.5); }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .maleCheck:checked {
+              box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+              background-color: rgba(61, 167, 228, 0.5); }
+              .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .maleCheck:checked::after {
+                font-family: FontAwesome;
+                content: '\f183';
+                color: rgba(7, 45, 54, 0.5); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .femaleCheck {
+            height: 50px;
+            width: 50px;
+            -webkit-appearance: none;
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12);
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            outline: none;
+            cursor: pointer;
+            margin: 1rem 0;
+            display: grid;
+            align-items: center;
+            justify-content: center; }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .femaleCheck:hover {
+              background-color: rgba(61, 167, 228, 0.2); }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .femaleCheck::after {
+              font-family: FontAwesome;
+              content: '\f182';
+              font-size: 2rem;
+              color: rgba(21, 108, 129, 0.5); }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .femaleCheck:checked {
+              box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+              background-color: rgba(61, 167, 228, 0.5); }
+              .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .genderContainer .femaleCheck:checked::after {
+                font-family: FontAwesome;
+                content: '\f182';
+                color: rgba(7, 45, 54, 0.5); }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .span {
+          margin-top: 1rem; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .salarySpan {
+          display: grid;
+          justify-content: center;
+          margin-bottom: 1.5rem; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .inputBoxM {
+          display: grid;
+          justify-content: center; }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .inputBoxM .inputBox {
+            display: grid;
+            justify-content: center; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form #maritalStatusID {
+          height: 50px;
+          width: 50px;
+          -webkit-appearance: none;
+          box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12);
+          border-radius: 50%;
+          border: 8px solid rgba(255, 255, 255, 0.1);
+          outline: none;
+          cursor: pointer;
+          margin: 1rem 0;
+          display: grid;
+          align-items: center;
+          justify-content: center; }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form #maritalStatusID:hover {
+            background-color: rgba(61, 167, 228, 0.2); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form #maritalStatusID::after {
+            font-family: FontAwesome;
+            content: '\f182';
+            font-size: 2rem;
+            color: rgba(21, 108, 129, 0.5); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form #maritalStatusID:checked {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+            background-color: rgba(61, 167, 228, 0.5); }
+            .MainStyle .OverAllFormContainer .FormBodyContainer .register_form #maritalStatusID:checked::after {
+              font-family: FontAwesome;
+              content: '\f182';
+              color: rgba(7, 45, 54, 0.5); }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .sameInput {
+          height: 40px;
+          width: 180px;
+          -webkit-appearance: none;
+          box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.2), 10px 10px 15px rgba(70, 70, 70, 0.12);
+          border-radius: .5rem;
+          border: 3px solid rgba(255, 255, 255, 0.1);
+          outline: none;
+          padding: 0 .5rem;
+          color: white;
+          transition: .3s ease-in-out all;
+          cursor: pointer;
+          background-color: rgba(159, 226, 231, 0.5); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .sameInput:focus {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+            background-color: rgba(159, 226, 231, 0.5); }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .inputBoxBtn {
+          display: grid;
+          justify-content: center; }
+        .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .ButtonStyle {
+          height: 40px;
+          width: 180px;
+          -webkit-appearance: none;
+          box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.2), 10px 10px 15px rgba(70, 70, 70, 0.12);
+          border-radius: .5rem;
+          border: 3px solid rgba(255, 255, 255, 0.1);
+          outline: none;
+          padding: 0 .5rem;
+          color: white;
+          transition: .3s ease-in-out all;
+          cursor: pointer;
+          background-color: rgba(10, 181, 233, 0.5); }
+          .MainStyle .OverAllFormContainer .FormBodyContainer .register_form .ButtonStyle:hover {
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.12); }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  color: aliceblue;
+  background-color: #1c3150;
+  font-family: "Quicksand"; }
+  html a {
+    text-decoration: none; }
+  html li {
+    list-style: none; }
+  html body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }

@@ -1,0 +1,369 @@
+
+
+
+.MainStyle {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    overflow-y: scroll;
+    // grid-template-columns: 1f;
+    height: 100vh;
+    // background: linear-gradient(to bottom, rgb(148, 243, 243), rgb(210, 243, 243));
+
+    .color {
+        position: absolute;
+        filter: blur(150px);
+        width: 600px;
+        height: 600px;
+
+        &:nth-child(1) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #096272;
+        }
+
+        &:nth-child(2) {
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 500px;
+            height: 500px;
+            background: #87ffef;
+        }
+
+        &:nth-child(3) {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 80%);
+            background: #00d2ff;
+        }
+    }
+
+    .OverAllFormContainer {
+        z-index: 1;
+
+        border-top: 1px solid rgba(255, 255, 255, .5);
+        border-left: 1px solid rgba(255, 255, 255, .5);
+        background-color: rgba(255, 255, 255, .1);
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: 500px;
+        // justify-content: center;
+        // justify-items: center;
+        
+        .HeaderContainer {
+            display: grid;
+            grid-template-columns: 10fr 1fr;
+            padding: .5rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            // background-color: #d45d5d;
+            // opacity: .2;
+
+            .right {
+                cursor: pointer;
+
+                // .CloseOutline {
+                //     font-size: 2rem;
+                // }
+            }
+        }
+
+        .FormBodyContainer {
+            padding: 2rem;
+            // background-color: aliceblue;
+            // width: 100%;
+            display: grid;
+            // justify-content: center;
+            // gap: 2rem;
+            // justify-items: center;
+            h2 {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            .register_form {
+                display: grid;
+                // gap: 1rem;
+
+                .namesContainer {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+                    .span {
+                        display: grid;
+                    }
+                }
+
+                .positionTHem {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+
+                .sizeContainer {
+
+                }
+
+                .nativeContainer {
+
+                }
+
+                .professionContainer {
+
+                }
+
+                .genderContainer {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    // f183
+
+                    justify-content: center;
+
+                    .inputBox {
+                        display: grid;
+                        justify-content: center;
+                    }
+
+                    .maleCheck {
+                        height: 50px;
+                        width: 50px;
+                        -webkit-appearance: none;
+                        border-radius: 50%;
+                        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                        10px 10px 15px rgba(70, 70, 70, .12);
+                        border: 8px solid rgba(255, 255, 255, .1);
+                        outline: none;
+                        cursor: pointer;
+                        margin: 1rem 0;
+                        display: grid;
+                        align-items: center;
+                        justify-content: center;
+                        transition: .3s all ease-in-out;
+
+                        &:hover {
+                            background-color: rgba(61, 167, 228, 0.2);
+                        }
+    
+                        &::after {
+                            font-family: FontAwesome;
+                            content: '\f183';
+                            font-size: 2rem;
+                            color: rgba(21, 108, 129, 0.5);
+                        }
+    
+                        &:checked {
+                            box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                            10px 10px 15px rgba(70, 70, 70, .12),
+                            inset -10px -10px 15px rgba(255, 255, 255, .3), 
+                            inset 10px 10px 15px rgba(70, 70, 70, .12);
+    
+                            background-color: rgba(61, 167, 228, 0.5);
+    
+                            &::after {
+                                font-family: FontAwesome;
+                                content: '\f183';
+                                color: rgba(7, 45, 54, 0.5);
+                            }
+                        }
+                    }
+
+                    .femaleCheck {
+                        height: 50px;
+                        width: 50px;
+                        -webkit-appearance: none;
+                        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                        10px 10px 15px rgba(70, 70, 70, .12);
+                        border-radius: 50%;
+                        border: 8px solid rgba(255, 255, 255, .1);
+                        outline: none;
+                        cursor: pointer;
+                        margin: 1rem 0;
+                        display: grid;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover {
+                            background-color: rgba(61, 167, 228, 0.2);
+                        }
+    
+                        &::after {
+                            font-family: FontAwesome;
+                            content: '\f182';
+                            font-size: 2rem;
+                            color: rgba(21, 108, 129, 0.5);
+                        }
+    
+                        &:checked {
+                            box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                            10px 10px 15px rgba(70, 70, 70, .12),
+                            inset -10px -10px 15px rgba(255, 255, 255, .3), 
+                            inset 10px 10px 15px rgba(70, 70, 70, .12);
+    
+                            background-color: rgba(61, 167, 228, 0.5);
+    
+                            &::after {
+                                font-family: FontAwesome;
+                                content: '\f182';
+                                color: rgba(7, 45, 54, 0.5);
+                            }
+                        }
+                    }
+
+                    // input[type="checkbox"]:nth-child(1)
+
+                }
+
+                .span {
+                    margin-top: 1rem;
+                }
+                
+                .salarySpan {
+                    display: grid;
+                    justify-content: center;
+                    margin-bottom: 1.5rem;
+                }
+
+                .inputBoxM {
+                    display: grid;
+                    justify-content: center;
+
+                    .inputBox {
+                        display: grid;
+                        justify-content: center;
+                    }
+                }
+
+                #maritalStatusID {
+                    height: 50px;
+                    width: 50px;
+                    -webkit-appearance: none;
+                    box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                    10px 10px 15px rgba(70, 70, 70, .12);
+                    border-radius: 50%;
+                    border: 8px solid rgba(255, 255, 255, .1);
+                    outline: none;
+                    cursor: pointer;
+                    margin: 1rem 0;
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                    // margin-bottom: 1rem;
+
+                    &:hover {
+                        background-color: rgba(61, 167, 228, 0.2);
+                    }
+
+                    &::after {
+                        font-family: FontAwesome;
+                        content: '\f182';
+                        font-size: 2rem;
+                        color: rgba(21, 108, 129, 0.5);
+                    }
+
+                    &:checked {
+                        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                        10px 10px 15px rgba(70, 70, 70, .12),
+                        inset -10px -10px 15px rgba(255, 255, 255, .3), 
+                        inset 10px 10px 15px rgba(70, 70, 70, .12);
+
+                        background-color: rgba(61, 167, 228, 0.5);
+
+                        &::after {
+                            font-family: FontAwesome;
+                            content: '\f182';
+                            color: rgba(7, 45, 54, 0.5);
+                        }
+                    }
+                }
+
+                .sameInput {
+                    height: 40px;
+                    width: 180px;
+                    -webkit-appearance: none;
+                    box-shadow: -10px -10px 15px rgba(255, 255, 255, .2), 
+                    10px 10px 15px rgba(70, 70, 70, .12);
+                    border-radius: .5rem;
+                    border: 3px solid rgba(255, 255, 255, .1);
+                    outline: none;
+                    // border: none;
+                    padding: 0 .5rem;
+                    color: white;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+
+                    background-color: rgba(159, 226, 231, 0.5);
+
+                    &:focus {
+                        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                        10px 10px 15px rgba(70, 70, 70, .12),
+                        inset -10px -10px 15px rgba(255, 255, 255, .3), 
+                        inset 10px 10px 15px rgba(70, 70, 70, .12);
+
+                        background-color: rgba(159, 226, 231, 0.5);
+                    }
+                }
+
+                .inputBoxBtn {
+                    display: grid;
+                    justify-content: center;
+                }
+
+                .ButtonStyle {
+                    height: 40px;
+                    width: 180px;
+                    -webkit-appearance: none;
+                    box-shadow: -10px -10px 15px rgba(255, 255, 255, .2), 
+                    10px 10px 15px rgba(70, 70, 70, .12);
+                    border-radius: .5rem;
+                    border: 3px solid rgba(255, 255, 255, .1);
+                    outline: none;
+                    // border: none;
+                    padding: 0 .5rem;
+                    color: white;
+                    transition: .3s ease-in-out all;
+                    cursor: pointer;
+
+                    background-color: rgba(10, 181, 233, 0.5);
+
+                    &:hover {
+                        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+                        10px 10px 15px rgba(70, 70, 70, .12),
+                        inset -10px -10px 15px rgba(255, 255, 255, .3), 
+                        inset 10px 10px 15px rgba(70, 70, 70, .12);
+
+                        // background-color: rgba(27, 138, 146, 0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// &:nth-child(1) {
+//     top: -350px;
+//     width: 600px;
+//     height: 600px;
+//     background: #ff359b;
+// }
+
+// &:nth-child(2) {
+    
+//     top: 100px;
+//     width: 500px;
+//     height: 500px;
+//     background: #fffd87;
+// }
+
+// &:nth-child(3) {
+//     top: 50px;
+//     width: 100px;
+//     height: 500px;
+//     background: #00d2ff;
+// }
