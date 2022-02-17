@@ -40,7 +40,8 @@ export const DeleButton = (props) => {
     <button 
       style={{ width: props.width_ }} 
       className="ButtonStyleRed" 
-      onClick={props.showForm} >
+      // onClick={props.showForm}
+      onClick={ props.del } >
         <RemoveOutline color="white" />
     </button>
   )

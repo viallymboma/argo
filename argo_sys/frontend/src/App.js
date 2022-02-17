@@ -13,6 +13,7 @@ import { getSailors } from './actions/sailors'
 import GlobalProvider, { GlobalContext } from './context/GlobalContext'
 import { publicRequest } from './utilities/requestMetho';
 import Sailors from './components/Sailors';
+import CSRFTOKEN from './components/csrftoken';
 
 function App() {
 
@@ -77,6 +78,10 @@ function App() {
     };
 
     getSailors ();
+
+    return () => {
+      // cleanUp
+    };
     // increaseLoadNumber ();
   }, [reloadTable])
 
@@ -162,13 +167,78 @@ function App() {
     setEnteredSalary(event.target.value)
   }
 
+  const BASE_URL_ = "http://127.0.0.1:8000";
+
+  let _csrfToken = null;
+
+  const getCsrfToken = async () => {
+    if (_csrfToken === null) {
+      const response = await fetch(`${BASE_URL_}/csrf/`, {
+        credentials: 'include',
+      });
+      const data = await response.json();
+      _csrfToken = data.csrfToken;
+    }
+    return _csrfToken;
+  }
+
+  const postSailors = async (headers, obj) => {
+    try {
+        const res = await publicRequest.post("/matello/", headers, obj);
+        console.log(res)
+        console.log("the data ", res)
+    } catch (err) {
+        console.log("Here is the error: ", err)
+    }
+  };
+
+  const deleSailor = async (id, headers, obj) => {
+
+    try {
+        const res = await publicRequest.delete(`/matello/${id}`, headers, obj);
+        console.log("the data ", res)
+    } catch (err) {
+        console.log("Here is the error: ", err)
+    }
+
+    makeReloadT()
+  };
+
+  const getCookie = (name) => {
+    let cookieValue = null;
+
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+
+                break;
+            }
+        }
+    }
+
+    return cookieValue;
+  }
+
+  const csrftoken = getCookie('csrftoken');
+
+  const CSRFTOKEN = () => {
+    return (
+        <input name="csrfmiddlewaretoken" value={csrftoken} type="hidden" />
+    );
+  };
+
   console.log(enteredGender)
   const formSubmissionHandler = (event) => {
     // event.preventDefautl();
     event.preventDefault();
-    // console.log(enteredName)
-    // console.log(enteredLastName)
-    // console.log(enteredDateOfBirth)
+    console.log(enteredName)
+    console.log(enteredLastName)
+    console.log(enteredDateOfBirth)
     // console.log(enteredHeight)
     // console.log(enteredWeight)
     // console.log(enteredOrigin)
@@ -182,6 +252,15 @@ function App() {
     // console.log(toggleGenderMale)
     // console.log(toggleGenderFemale)
     // console.log(toggleMaritalStatus)
+
+    // console.log(getCsrfToken())
+
+    const headers = { 
+      'Accept': 'application/json',
+      'Content-type': 'application/json; charset-UTF-8',
+      'X-CSRFToken': csrftoken
+      // 'X-CSRFToken': getCsrfToken()
+    };
 
     const newSailor = {
       firstName: enteredName,
@@ -199,22 +278,12 @@ function App() {
       // salary:  enteredSalary
     }
 
+    console.log(newSailor)
+
     // addSailor(newSailor)
-    const postSailors = async () => {
+    
 
-      try {
-          const res = await publicRequest.post("/matello/", newSailor);
-          console.log("the data ", res)
-          // feeding my meal state with data from database
-          setSailor(res.data)
-          console.log(res.data)
-          console.log(sailors)
-      } catch (err) {
-          console.log("Here is the error: ", err)
-      }
-    };
-
-    postSailors ();
+    postSailors (headers, newSailor);
 
     makeReloadT()
     console.log(reloadTable)
@@ -263,6 +332,8 @@ function App() {
           <div className="FormBodyContainer">
             <h2> Formulaire  </h2>
             <form className="register_form" onSubmit={ formSubmissionHandler }>
+            {/* {% csrf_token %} */}
+              <CSRFTOKEN />
               
               <div className="namesContainer positionTHem">
                 <div className="inputBox">
@@ -394,7 +465,7 @@ function App() {
                       </div> 
                   
                       <div className="ButtonSection">
-                        <DeleButton width_={60} action="delete" name_="delete" showForm={() => showFormCard()} />
+                        <DeleButton width_={60} action="delete" name_="delete" del={ () => deleSailor (sailor.id) } showForm={() => showFormCard()} />
                       </div> 
                     </div>
                   
