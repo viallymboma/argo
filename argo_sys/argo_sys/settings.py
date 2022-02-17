@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+
     # 'django.middleware.security.SecurityMiddleware',
     # 'django.contrib.sessions.middleware.SessionMiddleware',
     # 'django.middleware.common.CommonMiddleware',
@@ -61,9 +62,27 @@ MIDDLEWARE = [
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+DEFAULT_AUTHENTICATION_CLASSES: [
+    'rest_framework.authentication.BasicAuthentication',
+]
+
+# REST_FRAMEWORK = {
+# 'DEFAULT_AUTHENTICATION_CLASSES': (
+# 'rest_framework.authentication.TokenAuthentication',
+# )
+# }
+
 CORS_ALLOW_HEADERS = ['*']
 
+CORS_ALLOW_CREDENTIALS = True
+
+# Access-Control-Allow-Credential
+
+# CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
+
 CORS_ORIGIN_WHITELIST = (
+    "http://127.0.0.1:3000",
     'http://localhost:3000',
     'http://0.0.0.0:3000',
     'http://www.reboot-calabarfood.com:8000',
@@ -72,6 +91,7 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:3000",
     'http://localhost:3000',
     "http://localhost:8080",
     "http://127.0.0.1:9000",
@@ -82,12 +102,15 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
+    "http://127.0.0.1:3000",
     'http://localhost:3000',
     'http://www.reboot-calabarfood.com:8000',
     'http://194.163.155.58:8000',
 ]
 
 ROOT_URLCONF = 'argo_sys.urls'
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:3000']
 
 TEMPLATES = [
     {

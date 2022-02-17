@@ -1,6 +1,7 @@
 from rest_framework import routers
 from .api import SailorsSet
 from django.urls import path
+from . import views
 # from 
 
 router = routers.DefaultRouter()

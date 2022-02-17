@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import welcome
+from .views import welcome, csrf
+# from . import views
 from .settings import MEDIA_URL, MEDIA_ROOT
 from django.conf.urls.static import static
 
@@ -24,6 +25,7 @@ urlpatterns = [
     path('', welcome),
     path('', include('argonaute.urls')),
     path('admin/', admin.site.urls),
+    path('csrf/', csrf),
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
