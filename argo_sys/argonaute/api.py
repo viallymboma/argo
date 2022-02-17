@@ -17,11 +17,11 @@ class SailorsSet(viewsets.ModelViewSet):
     serializer_class = SailorsSerializer
 
     filter_backends = [filters.SearchFilter, DjangoFilterBackend, filters.OrderingFilter]
-    search_fields = ['id', 'firstName', 'origin', 'language', 'skill', 'maritalStatus', 'dateOfFirstSail', 'weight', 'height']
+    search_fields = ['id', 'firstName', 'origin', 'language', 'skill', 'maritalStatus', 'weight', 'height']
     # Examples: http://example.com/api/meals?search=Jollof (search any things that is included in any of the fields mentionned above)
 
-    filterset_fields = ['id', 'firstName', 'origin', 'language', 'skill', 'maritalStatus', 'dateOfFirstSail', 'weight', 'height']
+    filterset_fields = ['id', 'firstName', 'origin', 'language', 'skill', 'maritalStatus', 'weight', 'height']
     # Examples: http://example.com/api/meals?meal_type=Rice&meal_variation=Jollof 
 
-    ordering_fields = ['id', 'timestamp', 'updated', 'dateOfFirstSail', 'weight', 'height']
-    ordering = ['price']
+    ordering_fields = ['id', 'timestamp', 'updated', 'weight', 'height']
+    ordering = ['salary']

@@ -1,0 +1,57 @@
+
+
+
+.ButtonStyle {
+    height: 40px;
+    width: 180px;
+    -webkit-appearance: none;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, .2), 
+    10px 10px 15px rgba(70, 70, 70, .12);
+    border-radius: .5rem;
+    border: 3px solid rgba(255, 255, 255, .1);
+    outline: none;
+    // border: none;
+    padding: 0 .5rem;
+    color: white;
+    transition: .3s ease-in-out all;
+    cursor: pointer;
+
+    background-color: rgba(10, 181, 233, 0.5);
+
+    &:hover {
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+        10px 10px 15px rgba(70, 70, 70, .12),
+        inset -10px -10px 15px rgba(255, 255, 255, .3), 
+        inset 10px 10px 15px rgba(70, 70, 70, .12);
+
+        // background-color: rgba(27, 138, 146, 0.5);
+    }
+}
+
+
+.ButtonStyleRed {
+    height: 40px;
+    width: 180px;
+    -webkit-appearance: none;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, .2), 
+    10px 10px 15px rgba(70, 70, 70, .12);
+    border-radius: .5rem;
+    border: 3px solid rgba(255, 255, 255, .1);
+    outline: none;
+    // border: none;
+    padding: 0 .5rem;
+    color: white;
+    transition: .3s ease-in-out all;
+    cursor: pointer;
+
+    background-color: rgba(233, 62, 10, 0.5);
+
+    &:hover {
+        box-shadow: -10px -10px 15px rgba(255, 255, 255, .3), 
+        10px 10px 15px rgba(70, 70, 70, .12),
+        inset -10px -10px 15px rgba(255, 255, 255, .3), 
+        inset 10px 10px 15px rgba(70, 70, 70, .12);
+
+        // background-color: rgba(27, 138, 146, 0.5);
+    }
+}

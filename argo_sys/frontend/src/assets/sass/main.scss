@@ -4,7 +4,7 @@
 @import 'base/style';
 // @import 'base/mixins';
 // @import 'base/button';
-// @import 'base/utilities';
+@import 'base/utilities';
 // @import 'pages/base_template';
 
 *, 
@@ -29,9 +29,10 @@ html {
 
     background-color: rgb(28, 49, 80);
     font-family: $Quicksand;
+    overflow: hidden;
 
     body {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         overflow: hidden;
     }
