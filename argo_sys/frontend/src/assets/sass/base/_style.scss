@@ -437,6 +437,42 @@
 }
 
 
+.MainStyle2 {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    overflow-y: scroll;
+    // grid-template-columns: 1f;
+    grid-template-columns: 500px;
+    height: 100vh;
+    
+    .modalities {
+        color: red;
+    }
+
+    .form_control {
+
+    }
+
+    .invalid {
+        input {
+            border: 1px solid #b40e0e;
+            background-color: #fddddd;
+
+            &:focus {
+                border-color: #ff8800;
+                background-color: #fbe8d2;
+            }
+        }
+    }
+}
+
+
+
+
 
 // &:nth-child(1) {
 //     top: -350px;

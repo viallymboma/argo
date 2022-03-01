@@ -14,6 +14,15 @@ import GlobalProvider, { GlobalContext } from './context/GlobalContext'
 import { publicRequest } from './utilities/requestMetho';
 import Sailors from './components/Sailors';
 import CSRFTOKEN from './components/csrftoken';
+import ForwardCounter from './custom_hooks/ForwardCounter';
+import BackwardCounter from './custom_hooks/BackwardCounter';
+import SimpleInput from './forms/SimpleInput';
+
+
+
+// import { useRef } from 'react';
+
+
 
 function App() {
 
@@ -487,7 +496,31 @@ function App() {
 //   sailors: state.sailors.sailors
 // })
 
-export default App;
+
+const Apps = () => {
+
+  return (
+    <>
+      <ForwardCounter />
+      <BackwardCounter />
+    </>
+  )
+}
+
+const InputApps = () => {
+
+  // const [enteredName, setEnteredName] = useState ('');
+
+  return (
+    <div className='MainStyle2'>
+      <SimpleInput />
+    </div>
+  )
+}
+
+// export default App;
+// export default Apps;
+export default InputApps;
 
 
 

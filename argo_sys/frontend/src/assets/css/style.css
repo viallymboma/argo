@@ -254,6 +254,25 @@
           gap: 1rem;
           align-items: center; }
 
+.MainStyle2 {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  overflow-y: scroll;
+  grid-template-columns: 500px;
+  height: 100vh; }
+  .MainStyle2 .modalities {
+    color: red; }
+  .MainStyle2 .invalid input {
+    border: 1px solid #b40e0e;
+    background-color: #fddddd; }
+    .MainStyle2 .invalid input:focus {
+      border-color: #ff8800;
+      background-color: #fbe8d2; }
+
 .ButtonStyle {
   height: 40px;
   width: 180px;
